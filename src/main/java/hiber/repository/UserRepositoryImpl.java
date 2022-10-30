@@ -39,7 +39,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void removeUser(int id) throws NullPointerException{
         User user = getUserById(id);
-        if (null == user) {
+        if (user == null) {
             throw new NullPointerException("User not found");
         }
         entityManager.remove(user);
